@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                  color: primaryColor,
                 ),
                 child: Text('MASUK'),
               ),
@@ -29,58 +29,32 @@ class LoginPage extends StatelessWidget {
                 height: 180,
               ),
               const SizedBox(
-                height: 65,
+                height: 40,
               ),
               TextFormField(
-                decoration: const InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  floatingLabelBehavior: FloatingLabelBehavior.never,
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  isDense: true,
-                  suffixIconConstraints: BoxConstraints(
-                    minWidth: 50,
-                    minHeight: 32,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  hintText: 'Masukkan Email',
-                  labelText: 'Email',
-                ),
-                validator: (String? value) {
-                  return (value != null && value.contains('@'))
-                      ? 'Do not use the @ char.'
-                      : null;
-                },
+                decoration: formStyle.copyWith(
+                    hintText: 'Masukkan Email', labelText: 'Email'),
               ),
               const SizedBox(
                 height: 10,
               ),
               TextFormField(
-                decoration: const InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  floatingLabelBehavior: FloatingLabelBehavior.never,
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  isDense: true,
-                  suffixIconConstraints: BoxConstraints(
-                    minWidth: 50,
-                    minHeight: 32,
+                decoration: formStyle.copyWith(
+                    hintText: 'Masukkan Password', labelText: 'Password'),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, Routes.register);
+                },
+                child: const Text(
+                  "Belum Punya Akun?",
+                  style: TextStyle(
+                    color: primaryColor,
+                    fontWeight: FontWeight.w700,
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
-                  hintText: 'Masukkan Password',
-                  labelText: 'Password',
                 ),
               ),
               const SizedBox(
