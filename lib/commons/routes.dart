@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker_app/pages/landing_page.dart';
+import 'package:tracker_app/pages/auth/login_page.dart';
 
 class Routes {
   Routes._();
@@ -14,6 +15,8 @@ Route<dynamic>? generateRoute(RouteSettings settings) {
     /* Home */
     case Routes.landing:
       return MaterialPageRoute(builder: (_) => const LandingPage());
+    case Routes.login:
+      return MaterialPageRoute(builder: (_) => const LoginPage());
   }
   return null;
   //return MaterialPageRoute(

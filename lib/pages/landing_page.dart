@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tracker_app/commons/constant.dart';
+import 'package:tracker_app/commons/routes.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class LandingPage extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              //Navigator.pushNamed(context, Routes.register);
+              Navigator.pushNamed(context, Routes.login);
             },
             child: const Text(
               "Masuk",
